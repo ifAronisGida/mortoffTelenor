@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654.4,756.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654.4,716.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
@@ -55,8 +55,8 @@
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
-      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
   <Flowchart DisplayName="Master Flowchart" sap:VirtualizedContainerService.HintSize="614.4,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -79,7 +79,7 @@
           <av:PointCollection x:Key="ConnectorLocation">110,116.4 110,163.6</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Read XML export DATA" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Read XML export DATA" sap:VirtualizedContainerService.HintSize="792,6619.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="sxl:XDocument" Name="xmlObject" />
           <Variable x:TypeArguments="sd:DataTable" Name="DT" />
@@ -89,38 +89,96 @@
           <Variable x:TypeArguments="s:String[]" Default="[{&quot;ctn&quot;, &quot;Internet&quot;, &quot;0&quot;}]" Name="dataRowInternet" />
           <Variable x:TypeArguments="x:String" Name="inputText" />
           <Variable x:TypeArguments="x:String" Name="xmlFile" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtOsszesito" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select Data File" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314.4,52.8" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Select the xml file to read data&quot;]" TopMost="True" />
-        <ui:SelectFile DisplayName="Select XML File to Read Data" Filter="All files (*.*)|*.*" sap:VirtualizedContainerService.HintSize="314.4,22.4" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[xmlFile]" />
-        <ui:ReadTextFile Content="[inputText]" DisplayName="Read data xml" FileName="[xmlFile]" sap:VirtualizedContainerService.HintSize="314.4,52.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+        <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select Data File" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="769.6,52.8" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Select the xml file to read data&quot;]" TopMost="True" />
+        <ui:SelectFile DisplayName="Select XML File to Read Data" Filter="All files (*.*)|*.*" sap:VirtualizedContainerService.HintSize="769.6,22.4" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[xmlFile]" />
+        <ui:ReadTextFile Content="[inputText]" DisplayName="Read data xml" FileName="[xmlFile]" sap:VirtualizedContainerService.HintSize="769.6,52.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ReadTextFile>
-        <ui:DeserializeXml DisplayName="Deserialize XML" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xmlObject]" XMLString="[inputText]" />
-        <ui:BuildDataTable DataTable="[DT]" DisplayName="create datatable" sap:VirtualizedContainerService.HintSize="314.4,52.8" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;szám&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;típus&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;brutto&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;done&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-        <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each Number" sap:VirtualizedContainerService.HintSize="314.4,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[xmlObject.Element(&quot;szamla&quot;).Element(&quot;tetelek&quot;).Element(&quot;kartyaszintutetelek&quot;).Elements(&quot;mobilszam&quot;)]">
+        <ui:DeserializeXml DisplayName="Deserialize XML" sap:VirtualizedContainerService.HintSize="769.6,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xmlObject]" XMLString="[inputText]" />
+        <ui:BuildDataTable DataTable="[DT]" DisplayName="create datatable" sap:VirtualizedContainerService.HintSize="769.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;szám&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;típus&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;brutto&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;done&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:BuildDataTable>
+        <ui:BuildDataTable DataTable="[dtOsszesito]" DisplayName="create osszesito dt" sap:VirtualizedContainerService.HintSize="769.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ctn&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;osszeg&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:BuildDataTable>
+        <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="769.6,481.6" sap2010:WorkflowViewState.IdRef="ForEach`1_30" Values="[xmlObject.Element(&quot;szamla&quot;).Element(&quot;osszesites&quot;).Element(&quot;szamla_osszesito&quot;).Elements(&quot;kartya_osszesito&quot;)]">
+          <ui:ForEach.Body>
+            <ActivityAction x:TypeArguments="sxl:XElement">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sxl:XElement" Name="item" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="265.6,347.2" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="s:String[]" Default="[{&quot;ctn&quot;,&quot;0&quot;}]" Name="dataRowTavkoz" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_169">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[dataRowTavkoz(0)]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[item.Element("kartyaszam").Value.ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_170">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[dataRowTavkoz(1)]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[item.Element("osszesen").Value.ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[dataRowTavkoz]" DataTable="[dtOsszesito]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="243.2,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEach.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ForEach>
+        <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each Number" sap:VirtualizedContainerService.HintSize="769.6,5057.6" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[xmlObject.Element(&quot;szamla&quot;).Element(&quot;tetelek&quot;).Element(&quot;kartyaszintutetelek&quot;).Elements(&quot;mobilszam&quot;)]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="sxl:XElement">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sxl:XElement" Name="mobileNumber" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Number Iteration" sap:VirtualizedContainerService.HintSize="753.6,6924.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Number Iteration" sap:VirtualizedContainerService.HintSize="753.6,4923.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="ctn" />
                   <Variable x:TypeArguments="sxl:XDocument" Name="numberObject" />
+                  <Variable x:TypeArguments="x:Decimal" Name="ctnOsszeg" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Assign DisplayName="assign ctn" sap:VirtualizedContainerService.HintSize="731.2,60" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -135,6 +193,7 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_7">
@@ -170,19 +229,20 @@
                     </Assign.Value>
                   </Assign>
                 </Sequence>
-                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each havidij" sap:VirtualizedContainerService.HintSize="731.2,1408.8" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;havidijak&quot;).Elements(&quot;tetel&quot;)]">
+                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each havidij" sap:VirtualizedContainerService.HintSize="731.2,312" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;havidijak&quot;).Elements(&quot;tetel&quot;)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="sxl:XElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sxl:XElement" Name="tetel" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="715.2,1274.4" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="222.4,177.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="692.8,1149.6" sap2010:WorkflowViewState.IdRef="Flowchart_4">
+                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_4">
                           <Flowchart.Variables>
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimal" />
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimalElozo" />
@@ -201,12 +261,13 @@
                               <av:PointCollection x:Key="ConnectorLocation">530,40 509.8,40 509.8,86.4 569.8,86.4 569.8,116.4</av:PointCollection>
                               <x:Double x:Key="Height">1112.8320000000003</x:Double>
                               <x:Double x:Key="Width">678.39999999999964</x:Double>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Flowchart.StartNode>
                             <x:Reference>__ReferenceID15</x:Reference>
                           </Flowchart.StartNode>
-                          <FlowDecision x:Name="__ReferenceID15" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.24&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+                          <FlowDecision x:Name="__ReferenceID15" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.24&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -288,7 +349,7 @@
                               </FlowStep>
                             </FlowDecision.True>
                             <FlowDecision.False>
-                              <FlowDecision x:Name="__ReferenceID1" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.13&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                              <FlowDecision x:Name="__ReferenceID1" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.12&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.13&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.14&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -370,7 +431,7 @@
                                   </FlowStep>
                                 </FlowDecision.True>
                                 <FlowDecision.False>
-                                  <FlowDecision x:Name="__ReferenceID2" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.18&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                                  <FlowDecision x:Name="__ReferenceID2" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.42&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -452,7 +513,7 @@
                                       </FlowStep>
                                     </FlowDecision.True>
                                     <FlowDecision.False>
-                                      <FlowDecision x:Name="__ReferenceID5" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.22.0&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                                      <FlowDecision x:Name="__ReferenceID5" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.22&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -558,20 +619,27 @@
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each esetidijak" sap:VirtualizedContainerService.HintSize="731.2,1408.8" sap2010:WorkflowViewState.IdRef="ForEach`1_24" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;esetidijak&quot;).Elements(&quot;tetel&quot;)]">
+                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each esetidijak" sap:VirtualizedContainerService.HintSize="731.2,312" sap2010:WorkflowViewState.IdRef="ForEach`1_24" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;esetidijak&quot;).Elements(&quot;tetel&quot;)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="sxl:XElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sxl:XElement" Name="tetel" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="715.2,1274.4" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="222.4,177.6" sap2010:WorkflowViewState.IdRef="Sequence_41">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="692.8,1149.6" sap2010:WorkflowViewState.IdRef="Flowchart_22">
+                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_32">
                           <Flowchart.Variables>
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimal" />
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimalElozo" />
@@ -590,12 +658,13 @@
                               <av:PointCollection x:Key="ConnectorLocation">530,40 509.8,40 509.8,86.4 569.8,86.4 569.8,116.4</av:PointCollection>
                               <x:Double x:Key="Height">1112.8320000000003</x:Double>
                               <x:Double x:Key="Width">678.39999999999964</x:Double>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Flowchart.StartNode>
                             <x:Reference>__ReferenceID31</x:Reference>
                           </Flowchart.StartNode>
-                          <FlowDecision x:Name="__ReferenceID31" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.24&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_80">
+                          <FlowDecision x:Name="__ReferenceID31" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.24&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_118">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -614,7 +683,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">140,70 140,90</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_111">
+                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_233">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimal]</OutArgument>
                                   </Assign.To>
@@ -636,7 +705,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">140,150 140,170</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_112">
+                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_234">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimalElozo]</OutArgument>
                                       </Assign.To>
@@ -657,7 +726,7 @@
                                             <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_113">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_235">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[dataRowParkolas(2)]</OutArgument>
                                           </Assign.To>
@@ -677,7 +746,7 @@
                               </FlowStep>
                             </FlowDecision.True>
                             <FlowDecision.False>
-                              <FlowDecision x:Name="__ReferenceID17" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.13&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_79">
+                              <FlowDecision x:Name="__ReferenceID17" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.12&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.13&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.14&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_117">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -696,7 +765,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">140,310 130,310 130,320</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_114">
+                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_236">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Decimal">[telefonDecimal]</OutArgument>
                                       </Assign.To>
@@ -718,7 +787,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">130,380 130,390</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_115">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_237">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Decimal">[telefonDecimalElozo]</OutArgument>
                                           </Assign.To>
@@ -739,7 +808,7 @@
                                                 <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_116">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_238">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[dataRowTelefon(2)]</OutArgument>
                                               </Assign.To>
@@ -759,7 +828,7 @@
                                   </FlowStep>
                                 </FlowDecision.True>
                                 <FlowDecision.False>
-                                  <FlowDecision x:Name="__ReferenceID18" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.18&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_78">
+                                  <FlowDecision x:Name="__ReferenceID18" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.42&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_116">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -778,7 +847,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">130,530 130,550</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_117">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_239">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Decimal">[internetDecimal]</OutArgument>
                                           </Assign.To>
@@ -800,7 +869,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">130,610 130,640</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_118">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_240">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Decimal">[internetDecimalElozo]</OutArgument>
                                               </Assign.To>
@@ -821,7 +890,7 @@
                                                     <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_119">
+                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_241">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[dataRowInternet(2)]</OutArgument>
                                                   </Assign.To>
@@ -841,7 +910,7 @@
                                       </FlowStep>
                                     </FlowDecision.True>
                                     <FlowDecision.False>
-                                      <FlowDecision x:Name="__ReferenceID21" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.22.0&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_77">
+                                      <FlowDecision x:Name="__ReferenceID21" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.22&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_115">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -859,7 +928,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">160,820 160,850</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_120">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_242">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Decimal">[utdijDecimal]</OutArgument>
                                               </Assign.To>
@@ -881,7 +950,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">160,910 160,940</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_121">
+                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_243">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:Decimal">[utdijDecimalElozo]</OutArgument>
                                                   </Assign.To>
@@ -902,7 +971,7 @@
                                                         <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_122">
+                                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_244">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:String">[dataRowUtdij(2)]</OutArgument>
                                                       </Assign.To>
@@ -947,409 +1016,415 @@
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each forgalmidijak" sap:VirtualizedContainerService.HintSize="731.2,1408.8" sap2010:WorkflowViewState.IdRef="ForEach`1_25" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;forgalmidijak&quot;).Elements(&quot;tetel&quot;)]">
+                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each forgalmidijak" sap:VirtualizedContainerService.HintSize="731.2,194.4" sap2010:WorkflowViewState.IdRef="ForEach`1_25" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;forgalmidijak&quot;).Elements(&quot;tetel&quot;)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="sxl:XElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sxl:XElement" Name="tetel" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="715.2,1274.4" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                      <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_33">
+                        <Flowchart.Variables>
+                          <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimal" />
+                          <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimalElozo" />
+                          <Variable x:TypeArguments="x:Decimal" Name="telefonDecimal" />
+                          <Variable x:TypeArguments="x:Decimal" Name="telefonDecimalElozo" />
+                          <Variable x:TypeArguments="x:Decimal" Name="internetDecimal" />
+                          <Variable x:TypeArguments="x:Decimal" Name="internetDecimalElozo" />
+                          <Variable x:TypeArguments="x:Decimal" Name="utdijDecimal" />
+                          <Variable x:TypeArguments="x:Decimal" Name="utdijDecimalElozo" />
+                        </Flowchart.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">530,2.4</av:Point>
+                            <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">530,40 509.8,40 509.8,86.4 569.8,86.4 569.8,116.4</av:PointCollection>
+                            <x:Double x:Key="Height">1112.8320000000003</x:Double>
+                            <x:Double x:Key="Width">678.39999999999964</x:Double>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="692.8,1149.6" sap2010:WorkflowViewState.IdRef="Flowchart_23">
-                          <Flowchart.Variables>
-                            <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimal" />
-                            <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimalElozo" />
-                            <Variable x:TypeArguments="x:Decimal" Name="telefonDecimal" />
-                            <Variable x:TypeArguments="x:Decimal" Name="telefonDecimalElozo" />
-                            <Variable x:TypeArguments="x:Decimal" Name="internetDecimal" />
-                            <Variable x:TypeArguments="x:Decimal" Name="internetDecimalElozo" />
-                            <Variable x:TypeArguments="x:Decimal" Name="utdijDecimal" />
-                            <Variable x:TypeArguments="x:Decimal" Name="utdijDecimalElozo" />
-                          </Flowchart.Variables>
+                        <Flowchart.StartNode>
+                          <x:Reference>__ReferenceID47</x:Reference>
+                        </Flowchart.StartNode>
+                        <FlowDecision x:Name="__ReferenceID47" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.24&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_122">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <av:Point x:Key="ShapeLocation">530,2.4</av:Point>
-                              <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">530,40 509.8,40 509.8,86.4 569.8,86.4 569.8,116.4</av:PointCollection>
-                              <x:Double x:Key="Height">1112.8320000000003</x:Double>
-                              <x:Double x:Key="Width">678.39999999999964</x:Double>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <av:Point x:Key="ShapeLocation">510.4,116.4</av:Point>
+                              <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                              <av:PointCollection x:Key="TrueConnector">510.4,160 480.4,160 480.4,40 261.6,40</av:PointCollection>
+                              <av:PointCollection x:Key="FalseConnector">589.6,160 600,160 600,246.4 540,246.4 540,276.4</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Flowchart.StartNode>
-                            <x:Reference>__ReferenceID47</x:Reference>
-                          </Flowchart.StartNode>
-                          <FlowDecision x:Name="__ReferenceID47" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.24&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_84">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <av:Point x:Key="ShapeLocation">510.4,116.4</av:Point>
-                                <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
-                                <av:PointCollection x:Key="TrueConnector">510.4,160 480.4,160 480.4,40 261.6,40</av:PointCollection>
-                                <av:PointCollection x:Key="FalseConnector">589.6,160 600,160 600,246.4 540,246.4 540,276.4</av:PointCollection>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <FlowDecision.True>
-                              <FlowStep x:Name="__ReferenceID32">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">18.4,10</av:Point>
-                                    <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                    <av:PointCollection x:Key="ConnectorLocation">140,70 140,90</av:PointCollection>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_123">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimal]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
-                                  </Assign.Value>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </Assign>
-                                <FlowStep.Next>
-                                  <FlowStep x:Name="__ReferenceID39">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">18.4,90</av:Point>
-                                        <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">140,150 140,170</av:PointCollection>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_124">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimalElozo]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowParkolas(2))]</InArgument>
-                                      </Assign.Value>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Assign>
-                                    <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID40">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">18.4,170</av:Point>
-                                            <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_125">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[dataRowParkolas(2)]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">[(parkolasDecimal + parkolasDecimalElozo).ToString]</InArgument>
-                                          </Assign.Value>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Assign>
-                                      </FlowStep>
-                                    </FlowStep.Next>
-                                  </FlowStep>
-                                </FlowStep.Next>
-                              </FlowStep>
-                            </FlowDecision.True>
-                            <FlowDecision.False>
-                              <FlowDecision x:Name="__ReferenceID33" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.13&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_83">
+                          <FlowDecision.True>
+                            <FlowStep x:Name="__ReferenceID32">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">18.4,10</av:Point>
+                                  <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">140,70 140,90</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_245">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimal]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
+                                </Assign.Value>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <av:Point x:Key="ShapeLocation">500.4,276.4</av:Point>
-                                    <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
-                                    <av:PointCollection x:Key="TrueConnector">500.4,320 470.4,320 470.4,280 261.6,280</av:PointCollection>
-                                    <av:PointCollection x:Key="FalseConnector">579.6,320 590,320 590,416.4 530,416.4 530,446.4</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <FlowDecision.True>
-                                  <FlowStep x:Name="__ReferenceID35">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">18.4,250</av:Point>
-                                        <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">140,310 130,310 130,320</av:PointCollection>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_126">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Decimal">[telefonDecimal]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
-                                      </Assign.Value>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </Assign>
-                                    <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID41">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">8.40000000000001,320</av:Point>
-                                            <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                            <av:PointCollection x:Key="ConnectorLocation">130,380 130,390</av:PointCollection>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_127">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Decimal">[telefonDecimalElozo]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowTelefon(2))]</InArgument>
-                                          </Assign.Value>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Assign>
-                                        <FlowStep.Next>
-                                          <FlowStep x:Name="__ReferenceID42">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">8.40000000000001,390</av:Point>
-                                                <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_128">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:String">[dataRowTelefon(2)]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">[(telefonDecimal+telefonDecimalElozo).ToString]</InArgument>
-                                              </Assign.Value>
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </Assign>
-                                          </FlowStep>
-                                        </FlowStep.Next>
-                                      </FlowStep>
-                                    </FlowStep.Next>
-                                  </FlowStep>
-                                </FlowDecision.True>
-                                <FlowDecision.False>
-                                  <FlowDecision x:Name="__ReferenceID34" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.18&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_82">
+                              </Assign>
+                              <FlowStep.Next>
+                                <FlowStep x:Name="__ReferenceID39">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">18.4,90</av:Point>
+                                      <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">140,150 140,170</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_246">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimalElozo]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowParkolas(2))]</InArgument>
+                                    </Assign.Value>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <av:Point x:Key="ShapeLocation">490.4,446.4</av:Point>
-                                        <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
-                                        <av:PointCollection x:Key="TrueConnector">490.4,490 460.4,490 460.4,500 251.6,500</av:PointCollection>
-                                        <av:PointCollection x:Key="FalseConnector">569.6,490 580,490 580,696.4 520,696.4 520,726.4</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <FlowDecision.True>
-                                      <FlowStep x:Name="__ReferenceID36">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">8.40000000000001,470</av:Point>
-                                            <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                            <av:PointCollection x:Key="ConnectorLocation">130,530 130,550</av:PointCollection>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_129">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Decimal">[internetDecimal]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
-                                          </Assign.Value>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </Assign>
-                                        <FlowStep.Next>
-                                          <FlowStep x:Name="__ReferenceID43">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">8.40000000000001,550</av:Point>
-                                                <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                                <av:PointCollection x:Key="ConnectorLocation">130,610 130,640</av:PointCollection>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_130">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:Decimal">[internetDecimalElozo]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowInternet(2))]</InArgument>
-                                              </Assign.Value>
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </Assign>
-                                            <FlowStep.Next>
-                                              <FlowStep x:Name="__ReferenceID44">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <av:Point x:Key="ShapeLocation">8.40000000000001,640</av:Point>
-                                                    <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_131">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:String">[dataRowInternet(2)]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:String">[(internetDecimal + internetDecimalElozo).ToString]</InArgument>
-                                                  </Assign.Value>
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Assign>
-                                              </FlowStep>
-                                            </FlowStep.Next>
-                                          </FlowStep>
-                                        </FlowStep.Next>
-                                      </FlowStep>
-                                    </FlowDecision.True>
-                                    <FlowDecision.False>
-                                      <FlowDecision x:Name="__ReferenceID37" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.22.0&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_81">
+                                  </Assign>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID40">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">18.4,170</av:Point>
+                                          <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_247">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[dataRowParkolas(2)]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[(parkolasDecimal + parkolasDecimalElozo).ToString]</InArgument>
+                                        </Assign.Value>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <av:Point x:Key="ShapeLocation">480.4,726.4</av:Point>
-                                            <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
-                                            <av:PointCollection x:Key="TrueConnector">480.4,770 450.4,770 450.4,790 281.6,790</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <FlowDecision.True>
-                                          <FlowStep x:Name="__ReferenceID38">
+                                      </Assign>
+                                    </FlowStep>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowDecision.True>
+                          <FlowDecision.False>
+                            <FlowDecision x:Name="__ReferenceID33" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.12&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.13&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.14&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_121">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <av:Point x:Key="ShapeLocation">500.4,276.4</av:Point>
+                                  <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                  <av:PointCollection x:Key="TrueConnector">500.4,320 470.4,320 470.4,280 261.6,280</av:PointCollection>
+                                  <av:PointCollection x:Key="FalseConnector">579.6,320 590,320 590,416.4 530,416.4 530,446.4</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <FlowDecision.True>
+                                <FlowStep x:Name="__ReferenceID35">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">18.4,250</av:Point>
+                                      <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">140,310 130,310 130,320</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_248">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Decimal">[telefonDecimal]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
+                                    </Assign.Value>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Assign>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID41">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">8.40000000000001,320</av:Point>
+                                          <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">130,380 130,390</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_249">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Decimal">[telefonDecimalElozo]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowTelefon(2))]</InArgument>
+                                        </Assign.Value>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Assign>
+                                      <FlowStep.Next>
+                                        <FlowStep x:Name="__ReferenceID42">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">8.40000000000001,390</av:Point>
+                                              <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_250">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[dataRowTelefon(2)]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[(telefonDecimal+telefonDecimalElozo).ToString]</InArgument>
+                                            </Assign.Value>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">38.4,760</av:Point>
-                                                <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                                <av:PointCollection x:Key="ConnectorLocation">160,820 160,850</av:PointCollection>
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_132">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:Decimal">[utdijDecimal]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
-                                              </Assign.Value>
+                                          </Assign>
+                                        </FlowStep>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowDecision.True>
+                              <FlowDecision.False>
+                                <FlowDecision x:Name="__ReferenceID34" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.42&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_120">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">490.4,446.4</av:Point>
+                                      <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                      <av:PointCollection x:Key="TrueConnector">490.4,490 460.4,490 460.4,500 251.6,500</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">569.6,490 580,490 580,696.4 520,696.4 520,726.4</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <FlowDecision.True>
+                                    <FlowStep x:Name="__ReferenceID36">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">8.40000000000001,470</av:Point>
+                                          <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">130,530 130,550</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_251">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Decimal">[internetDecimal]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
+                                        </Assign.Value>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Assign>
+                                      <FlowStep.Next>
+                                        <FlowStep x:Name="__ReferenceID43">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">8.40000000000001,550</av:Point>
+                                              <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">130,610 130,640</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_252">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Decimal">[internetDecimalElozo]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowInternet(2))]</InArgument>
+                                            </Assign.Value>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Assign>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID44">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <av:Point x:Key="ShapeLocation">8.40000000000001,640</av:Point>
+                                                  <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                            </Assign>
-                                            <FlowStep.Next>
-                                              <FlowStep x:Name="__ReferenceID45">
+                                              <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_253">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[dataRowInternet(2)]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[(internetDecimal + internetDecimalElozo).ToString]</InArgument>
+                                                </Assign.Value>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <av:Point x:Key="ShapeLocation">38.4,850</av:Point>
-                                                    <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                                    <av:PointCollection x:Key="ConnectorLocation">160,910 160,940</av:PointCollection>
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_133">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Decimal">[utdijDecimalElozo]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Decimal">[convert.toDecimal(dataRowUtdij(2))]</InArgument>
-                                                  </Assign.Value>
+                                              </Assign>
+                                            </FlowStep>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowDecision.True>
+                                  <FlowDecision.False>
+                                    <FlowDecision x:Name="__ReferenceID37" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.22&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_119">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">480.4,726.4</av:Point>
+                                          <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">480.4,770 450.4,770 450.4,790 281.6,790</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.True>
+                                        <FlowStep x:Name="__ReferenceID38">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">38.4,760</av:Point>
+                                              <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">160,820 160,850</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_254">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Decimal">[utdijDecimal]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
+                                            </Assign.Value>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Assign>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID45">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">38.4,850</av:Point>
+                                                  <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">160,910 160,940</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_255">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Decimal">[utdijDecimalElozo]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Decimal">[convert.toDecimal(dataRowUtdij(2))]</InArgument>
+                                                </Assign.Value>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Assign>
+                                              <FlowStep.Next>
+                                                <FlowStep x:Name="__ReferenceID46">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <av:Point x:Key="ShapeLocation">38.4,940</av:Point>
+                                                      <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                </Assign>
-                                                <FlowStep.Next>
-                                                  <FlowStep x:Name="__ReferenceID46">
+                                                  <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_256">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dataRowUtdij(2)]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[(utdijDecimal + utdijDecimalElozo).ToString]</InArgument>
+                                                    </Assign.Value>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">38.4,940</av:Point>
-                                                        <av:Size x:Key="ShapeSize">243.2,60</av:Size>
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_134">
-                                                      <Assign.To>
-                                                        <OutArgument x:TypeArguments="x:String">[dataRowUtdij(2)]</OutArgument>
-                                                      </Assign.To>
-                                                      <Assign.Value>
-                                                        <InArgument x:TypeArguments="x:String">[(utdijDecimal + utdijDecimalElozo).ToString]</InArgument>
-                                                      </Assign.Value>
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                    </Assign>
-                                                  </FlowStep>
-                                                </FlowStep.Next>
-                                              </FlowStep>
-                                            </FlowStep.Next>
-                                          </FlowStep>
-                                        </FlowDecision.True>
-                                      </FlowDecision>
-                                    </FlowDecision.False>
-                                  </FlowDecision>
-                                </FlowDecision.False>
-                              </FlowDecision>
-                            </FlowDecision.False>
-                          </FlowDecision>
-                          <x:Reference>__ReferenceID32</x:Reference>
-                          <x:Reference>__ReferenceID33</x:Reference>
-                          <x:Reference>__ReferenceID34</x:Reference>
-                          <x:Reference>__ReferenceID35</x:Reference>
-                          <x:Reference>__ReferenceID36</x:Reference>
-                          <x:Reference>__ReferenceID37</x:Reference>
-                          <x:Reference>__ReferenceID38</x:Reference>
-                          <x:Reference>__ReferenceID39</x:Reference>
-                          <x:Reference>__ReferenceID40</x:Reference>
-                          <x:Reference>__ReferenceID41</x:Reference>
-                          <x:Reference>__ReferenceID42</x:Reference>
-                          <x:Reference>__ReferenceID43</x:Reference>
-                          <x:Reference>__ReferenceID44</x:Reference>
-                          <x:Reference>__ReferenceID45</x:Reference>
-                          <x:Reference>__ReferenceID46</x:Reference>
-                        </Flowchart>
-                      </Sequence>
+                                                  </Assign>
+                                                </FlowStep>
+                                              </FlowStep.Next>
+                                            </FlowStep>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.True>
+                                    </FlowDecision>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowDecision.False>
+                            </FlowDecision>
+                          </FlowDecision.False>
+                        </FlowDecision>
+                        <x:Reference>__ReferenceID32</x:Reference>
+                        <x:Reference>__ReferenceID33</x:Reference>
+                        <x:Reference>__ReferenceID34</x:Reference>
+                        <x:Reference>__ReferenceID35</x:Reference>
+                        <x:Reference>__ReferenceID36</x:Reference>
+                        <x:Reference>__ReferenceID37</x:Reference>
+                        <x:Reference>__ReferenceID38</x:Reference>
+                        <x:Reference>__ReferenceID39</x:Reference>
+                        <x:Reference>__ReferenceID40</x:Reference>
+                        <x:Reference>__ReferenceID41</x:Reference>
+                        <x:Reference>__ReferenceID42</x:Reference>
+                        <x:Reference>__ReferenceID43</x:Reference>
+                        <x:Reference>__ReferenceID44</x:Reference>
+                        <x:Reference>__ReferenceID45</x:Reference>
+                        <x:Reference>__ReferenceID46</x:Reference>
+                      </Flowchart>
                     </ActivityAction>
                   </ui:ForEach.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each havidijkedv" sap:VirtualizedContainerService.HintSize="731.2,1408.8" sap2010:WorkflowViewState.IdRef="ForEach`1_26" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;havidijkedv&quot;).Elements(&quot;tetel&quot;)]">
+                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each havidijkedv" sap:VirtualizedContainerService.HintSize="731.2,312" sap2010:WorkflowViewState.IdRef="ForEach`1_26" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;havidijkedv&quot;).Elements(&quot;tetel&quot;)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="sxl:XElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sxl:XElement" Name="tetel" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="715.2,1274.4" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="222.4,177.6" sap2010:WorkflowViewState.IdRef="Sequence_43">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="692.8,1149.6" sap2010:WorkflowViewState.IdRef="Flowchart_24">
+                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_34">
                           <Flowchart.Variables>
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimal" />
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimalElozo" />
@@ -1368,12 +1443,13 @@
                               <av:PointCollection x:Key="ConnectorLocation">530,40 509.8,40 509.8,86.4 569.8,86.4 569.8,116.4</av:PointCollection>
                               <x:Double x:Key="Height">1112.8320000000003</x:Double>
                               <x:Double x:Key="Width">678.39999999999964</x:Double>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Flowchart.StartNode>
                             <x:Reference>__ReferenceID63</x:Reference>
                           </Flowchart.StartNode>
-                          <FlowDecision x:Name="__ReferenceID63" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.24&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_88">
+                          <FlowDecision x:Name="__ReferenceID63" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.24&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_126">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1392,7 +1468,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">140,70 140,90</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_135">
+                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_257">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimal]</OutArgument>
                                   </Assign.To>
@@ -1414,7 +1490,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">140,150 140,170</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_136">
+                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_258">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimalElozo]</OutArgument>
                                       </Assign.To>
@@ -1435,7 +1511,7 @@
                                             <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_137">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_259">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[dataRowParkolas(2)]</OutArgument>
                                           </Assign.To>
@@ -1455,7 +1531,7 @@
                               </FlowStep>
                             </FlowDecision.True>
                             <FlowDecision.False>
-                              <FlowDecision x:Name="__ReferenceID49" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.13&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_87">
+                              <FlowDecision x:Name="__ReferenceID49" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.12&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.13&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.14&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_125">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1474,7 +1550,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">140,310 130,310 130,320</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_138">
+                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_260">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Decimal">[telefonDecimal]</OutArgument>
                                       </Assign.To>
@@ -1496,7 +1572,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">130,380 130,390</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_139">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_261">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Decimal">[telefonDecimalElozo]</OutArgument>
                                           </Assign.To>
@@ -1517,7 +1593,7 @@
                                                 <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_140">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_262">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[dataRowTelefon(2)]</OutArgument>
                                               </Assign.To>
@@ -1537,7 +1613,7 @@
                                   </FlowStep>
                                 </FlowDecision.True>
                                 <FlowDecision.False>
-                                  <FlowDecision x:Name="__ReferenceID50" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.18&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_86">
+                                  <FlowDecision x:Name="__ReferenceID50" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.42&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_124">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1556,7 +1632,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">130,530 130,550</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_141">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_263">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Decimal">[internetDecimal]</OutArgument>
                                           </Assign.To>
@@ -1578,7 +1654,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">130,610 130,640</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_142">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_264">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Decimal">[internetDecimalElozo]</OutArgument>
                                               </Assign.To>
@@ -1599,7 +1675,7 @@
                                                     <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_143">
+                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_265">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[dataRowInternet(2)]</OutArgument>
                                                   </Assign.To>
@@ -1619,7 +1695,7 @@
                                       </FlowStep>
                                     </FlowDecision.True>
                                     <FlowDecision.False>
-                                      <FlowDecision x:Name="__ReferenceID53" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.22.0&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_85">
+                                      <FlowDecision x:Name="__ReferenceID53" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.22&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_123">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1637,7 +1713,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">160,820 160,850</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_144">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_266">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Decimal">[utdijDecimal]</OutArgument>
                                               </Assign.To>
@@ -1659,7 +1735,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">160,910 160,940</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_145">
+                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_267">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:Decimal">[utdijDecimalElozo]</OutArgument>
                                                   </Assign.To>
@@ -1680,7 +1756,7 @@
                                                         <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_146">
+                                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_268">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:String">[dataRowUtdij(2)]</OutArgument>
                                                       </Assign.To>
@@ -1725,8 +1801,13 @@
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each forgalmidijkedv" sap:VirtualizedContainerService.HintSize="243.2,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_27" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;forgalmidijkedv&quot;).Elements(&quot;tetel&quot;)]">
+                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each forgalmidijkedv" sap:VirtualizedContainerService.HintSize="731.2,312" sap2010:WorkflowViewState.IdRef="ForEach`1_27" Values="[mobileNumber.Element(&quot;tavkozlesi_szolgaltatasok&quot;).Element(&quot;forgalmidijkedv&quot;).Elements(&quot;tetel&quot;)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="sxl:XElement">
                       <ActivityAction.Argument>
@@ -1736,9 +1817,10 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_25">
+                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_35">
                           <Flowchart.Variables>
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimal" />
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimalElozo" />
@@ -1757,12 +1839,13 @@
                               <av:PointCollection x:Key="ConnectorLocation">530,40 509.8,40 509.8,86.4 569.8,86.4 569.8,116.4</av:PointCollection>
                               <x:Double x:Key="Height">1112.8320000000003</x:Double>
                               <x:Double x:Key="Width">678.39999999999964</x:Double>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Flowchart.StartNode>
                             <x:Reference>__ReferenceID79</x:Reference>
                           </Flowchart.StartNode>
-                          <FlowDecision x:Name="__ReferenceID79" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.24&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_92">
+                          <FlowDecision x:Name="__ReferenceID79" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.24&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_130">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1781,7 +1864,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">140,70 140,90</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_147">
+                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_269">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimal]</OutArgument>
                                   </Assign.To>
@@ -1803,7 +1886,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">140,150 140,170</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_148">
+                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_270">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimalElozo]</OutArgument>
                                       </Assign.To>
@@ -1824,7 +1907,7 @@
                                             <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_149">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_271">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[dataRowParkolas(2)]</OutArgument>
                                           </Assign.To>
@@ -1844,7 +1927,7 @@
                               </FlowStep>
                             </FlowDecision.True>
                             <FlowDecision.False>
-                              <FlowDecision x:Name="__ReferenceID65" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.13&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_91">
+                              <FlowDecision x:Name="__ReferenceID65" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.12&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.13&quot;) OR tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.14&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_129">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1863,7 +1946,7 @@
                                         <av:PointCollection x:Key="ConnectorLocation">140,310 130,310 130,320</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_150">
+                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_272">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Decimal">[telefonDecimal]</OutArgument>
                                       </Assign.To>
@@ -1885,7 +1968,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">130,380 130,390</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_151">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_273">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Decimal">[telefonDecimalElozo]</OutArgument>
                                           </Assign.To>
@@ -1906,7 +1989,7 @@
                                                 <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_152">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_274">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[dataRowTelefon(2)]</OutArgument>
                                               </Assign.To>
@@ -1926,7 +2009,7 @@
                                   </FlowStep>
                                 </FlowDecision.True>
                                 <FlowDecision.False>
-                                  <FlowDecision x:Name="__ReferenceID66" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ 64.20.18&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_90">
+                                  <FlowDecision x:Name="__ReferenceID66" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString.Contains(&quot;61.20.42&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_128">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1945,7 +2028,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">130,530 130,550</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_153">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_275">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Decimal">[internetDecimal]</OutArgument>
                                           </Assign.To>
@@ -1967,7 +2050,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">130,610 130,640</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_154">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_276">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Decimal">[internetDecimalElozo]</OutArgument>
                                               </Assign.To>
@@ -1988,7 +2071,7 @@
                                                     <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_155">
+                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_277">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[dataRowInternet(2)]</OutArgument>
                                                   </Assign.To>
@@ -2008,7 +2091,7 @@
                                       </FlowStep>
                                     </FlowDecision.True>
                                     <FlowDecision.False>
-                                      <FlowDecision x:Name="__ReferenceID69" Condition="[tetel.Element(&quot;besorszam&quot;).Value.ToString = &quot;SZJ:63.21.22.0&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_89">
+                                      <FlowDecision x:Name="__ReferenceID69" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.22&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_127">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2026,7 +2109,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">160,820 160,850</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_156">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_278">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Decimal">[utdijDecimal]</OutArgument>
                                               </Assign.To>
@@ -2048,7 +2131,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">160,910 160,940</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_157">
+                                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_279">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:Decimal">[utdijDecimalElozo]</OutArgument>
                                                   </Assign.To>
@@ -2069,7 +2152,7 @@
                                                         <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_158">
+                                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_280">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:String">[dataRowUtdij(2)]</OutArgument>
                                                       </Assign.To>
@@ -2114,60 +2197,72 @@
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each mobilvasarlas" sap:VirtualizedContainerService.HintSize="287.2,194.4" sap2010:WorkflowViewState.IdRef="ForEach`1_29" Values="[mobileNumber.Element(&quot;mobil_vasarlas&quot;).Elements(&quot;tetel&quot;)]">
+                <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each mobilvasarlas" sap:VirtualizedContainerService.HintSize="731.2,1408.8" sap2010:WorkflowViewState.IdRef="ForEach`1_29" Values="[mobileNumber.Element(&quot;mobil_vasarlas&quot;).Elements(&quot;tetel&quot;)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="sxl:XElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sxl:XElement" Name="tetel" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="715.2,1274.4" sap2010:WorkflowViewState.IdRef="Sequence_45">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Flowchart DisplayName="sum based on type in mobile purchase" sap:VirtualizedContainerService.HintSize="614.4,667.2" sap2010:WorkflowViewState.IdRef="Flowchart_26">
+                        <Flowchart DisplayName="sum based on type" sap:VirtualizedContainerService.HintSize="692.8,1149.6" sap2010:WorkflowViewState.IdRef="Flowchart_36">
                           <Flowchart.Variables>
-                            <Variable x:TypeArguments="x:Decimal" Name="utdijDecimal" />
-                            <Variable x:TypeArguments="x:Decimal" Name="utdijDecimalElozo" />
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimal" />
                             <Variable x:TypeArguments="x:Decimal" Name="parkolasDecimalElozo" />
+                            <Variable x:TypeArguments="x:Decimal" Name="telefonDecimal" />
+                            <Variable x:TypeArguments="x:Decimal" Name="telefonDecimalElozo" />
+                            <Variable x:TypeArguments="x:Decimal" Name="internetDecimal" />
+                            <Variable x:TypeArguments="x:Decimal" Name="internetDecimalElozo" />
+                            <Variable x:TypeArguments="x:Decimal" Name="utdijDecimal" />
+                            <Variable x:TypeArguments="x:Decimal" Name="utdijDecimalElozo" />
                           </Flowchart.Variables>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <av:Point x:Key="ShapeLocation">310,2.4</av:Point>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <av:Point x:Key="ShapeLocation">530,2.4</av:Point>
                               <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">340,77.6 340,107.6 330,107.6 330,116.4</av:PointCollection>
-                              <x:Double x:Key="Height">630</x:Double>
+                              <av:PointCollection x:Key="ConnectorLocation">530,40 509.8,40 509.8,86.4 569.8,86.4 569.8,116.4</av:PointCollection>
+                              <x:Double x:Key="Height">1112.8320000000003</x:Double>
+                              <x:Double x:Key="Width">678.39999999999964</x:Double>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Flowchart.StartNode>
                             <x:Reference>__ReferenceID87</x:Reference>
                           </Flowchart.StartNode>
-                          <FlowDecision x:Name="__ReferenceID87" Condition="[tetel.Element(&quot;termeknev&quot;).Value.toString.Contains(&quot;SZJ:63.21.22.0&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_94">
+                          <FlowDecision x:Name="__ReferenceID87" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.24&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_134">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <av:Point x:Key="ShapeLocation">290.4,116.4</av:Point>
+                                <av:Point x:Key="ShapeLocation">510.4,116.4</av:Point>
                                 <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
-                                <av:PointCollection x:Key="FalseConnector">369.6,160 430,160 430,336.4</av:PointCollection>
-                                <av:PointCollection x:Key="TrueConnector">290.4,160 260.4,160 260.4,50 252.095,50</av:PointCollection>
+                                <av:PointCollection x:Key="TrueConnector">510.4,160 480.4,160 480.4,40 261.6,40</av:PointCollection>
+                                <av:PointCollection x:Key="FalseConnector">589.6,160 610,160 610,696.4 520,696.4 520,726.4</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <FlowDecision.True>
-                              <FlowStep x:Name="__ReferenceID81">
+                              <FlowStep x:Name="__ReferenceID80">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">8.895,20</av:Point>
+                                    <av:Point x:Key="ShapeLocation">18.4,10</av:Point>
                                     <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                    <av:PointCollection x:Key="ConnectorLocation">130.495,80 130.495,130</av:PointCollection>
+                                    <av:PointCollection x:Key="ConnectorLocation">140,70 140,90</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_159">
+                                <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_281">
                                   <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Decimal">[utdijDecimal]</OutArgument>
+                                    <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimal]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
                                     <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
@@ -2179,20 +2274,20 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                 </Assign>
                                 <FlowStep.Next>
-                                  <FlowStep x:Name="__ReferenceID82">
+                                  <FlowStep x:Name="__ReferenceID83">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">8.895,130</av:Point>
+                                        <av:Point x:Key="ShapeLocation">18.4,90</av:Point>
                                         <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">130.495,190 130.495,220 130.99,220 130.99,240</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">140,150 140,170</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_160">
+                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_282">
                                       <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Decimal">[utdijDecimalElozo]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimalElozo]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowUtdij(2))]</InArgument>
+                                        <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowParkolas(2))]</InArgument>
                                       </Assign.Value>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2201,19 +2296,19 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                     </Assign>
                                     <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID83">
+                                      <FlowStep x:Name="__ReferenceID84">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">9.38999999999999,240</av:Point>
+                                            <av:Point x:Key="ShapeLocation">18.4,170</av:Point>
                                             <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_161">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_283">
                                           <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[dataRowUtdij(2)]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:String">[dataRowParkolas(2)]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">[(utdijDecimal + utdijDecimalElozo).ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">[(parkolasDecimal + parkolasDecimalElozo).ToString]</InArgument>
                                           </Assign.Value>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2228,27 +2323,27 @@
                               </FlowStep>
                             </FlowDecision.True>
                             <FlowDecision.False>
-                              <FlowDecision x:Name="__ReferenceID80" Condition="[tetel.Element(&quot;termeknev&quot;).Value.toString.Contains(&quot;SZJ:63.21.24&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_93">
+                              <FlowDecision x:Name="__ReferenceID81" Condition="[tetel.Element(&quot;termeknev&quot;).Value.ToString.Contains(&quot;52.21.22&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_131">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <av:Point x:Key="ShapeLocation">390.4,336.4</av:Point>
+                                    <av:Point x:Key="ShapeLocation">480.4,726.4</av:Point>
                                     <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
-                                    <av:PointCollection x:Key="TrueConnector">390.4,380 341.39,380</av:PointCollection>
+                                    <av:PointCollection x:Key="TrueConnector">480.4,770 450.4,770 450.4,790 281.6,790</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <FlowDecision.True>
-                                  <FlowStep x:Name="__ReferenceID84">
+                                  <FlowStep x:Name="__ReferenceID82">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">98.19,350</av:Point>
+                                        <av:Point x:Key="ShapeLocation">38.4,760</av:Point>
                                         <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">219.79,410 219.79,440 220.285,440 220.285,460</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">160,820 160,850</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_162">
+                                    <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_290">
                                       <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimal]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:Decimal">[utdijDecimal]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
                                         <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(tetel.Element("bruttoar").Value) / 100]</InArgument>
@@ -2263,17 +2358,17 @@
                                       <FlowStep x:Name="__ReferenceID85">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">98.685,460</av:Point>
+                                            <av:Point x:Key="ShapeLocation">38.4,850</av:Point>
                                             <av:Size x:Key="ShapeSize">243.2,60</av:Size>
-                                            <av:PointCollection x:Key="ConnectorLocation">220.285,520 220.285,550 220.78,550 220.78,570</av:PointCollection>
+                                            <av:PointCollection x:Key="ConnectorLocation">160,910 160,940</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_163">
+                                        <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_291">
                                           <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Decimal">[parkolasDecimalElozo]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Decimal">[utdijDecimalElozo]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowParkolas(2))]</InArgument>
+                                            <InArgument x:TypeArguments="x:Decimal">[convert.toDecimal(dataRowUtdij(2))]</InArgument>
                                           </Assign.Value>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2285,16 +2380,16 @@
                                           <FlowStep x:Name="__ReferenceID86">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">99.18,570</av:Point>
+                                                <av:Point x:Key="ShapeLocation">38.4,940</av:Point>
                                                 <av:Size x:Key="ShapeSize">243.2,60</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_164">
+                                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_292">
                                               <Assign.To>
-                                                <OutArgument x:TypeArguments="x:String">[dataRowParkolas(2)]</OutArgument>
+                                                <OutArgument x:TypeArguments="x:String">[dataRowUtdij(2)]</OutArgument>
                                               </Assign.To>
                                               <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">[(parkolasDecimal + parkolasDecimalElozo).ToString]</InArgument>
+                                                <InArgument x:TypeArguments="x:String">[(utdijDecimal + utdijDecimalElozo).ToString]</InArgument>
                                               </Assign.Value>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2322,11 +2417,73 @@
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <Sequence DisplayName="build data rows" sap:VirtualizedContainerService.HintSize="243.2,52.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                <Sequence DisplayName="calculate diff" sap:VirtualizedContainerService.HintSize="731.2,708" sap2010:WorkflowViewState.IdRef="Sequence_58">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="516.8,60" sap2010:WorkflowViewState.IdRef="Assign_171">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Decimal">[ctnOsszeg]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Decimal">[convert.ToDecimal(dataRowInternet(2)) + convert.ToDecimal(dataRowTelefon(2)) + convert.ToDecimal(dataRowUtdij(2)) + convert.ToDecimal(dataRowParkolas(2))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtOsszesito]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="516.8,483.2" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486.4,334.4" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[row.Item(0).ToString = ctn]" sap:VirtualizedContainerService.HintSize="464,209.6" sap2010:WorkflowViewState.IdRef="If_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_172">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[dataRowTelefon(2)]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[(convert.ToDecimal(dataRowTelefon(2)) - (ctnOsszeg - (convert.ToDecimal(row("osszeg").ToString) / 100))).ToString]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </If.Then>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEachRow>
+                </Sequence>
+                <Sequence DisplayName="build data rows" sap:VirtualizedContainerService.HintSize="731.2,334.4" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[dataRowTelefon]" DataTable="[DT]" DisplayName="telefon" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
@@ -2337,20 +2494,26 @@
               </Sequence>
             </ActivityAction>
           </ui:ForEach.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
         </ui:ForEach>
-        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="write DATA" sap:VirtualizedContainerService.HintSize="314.4,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="DATA.xlsx">
+        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="write DATA" sap:VirtualizedContainerService.HintSize="769.6,327.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="DATA.xlsx">
           <ui:ExcelApplicationScope.Body>
             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336.8,212.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="222.4,177.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ExcelWriteRange AddHeaders="False" DataTable="[DT]" DisplayName="write data to excel" sap:VirtualizedContainerService.HintSize="314.4,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1">
+                <ui:ExcelWriteRange AddHeaders="False" DataTable="[DT]" DisplayName="write data to excel" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1">
                   <ui:ExcelWriteRange.StartingCell>
                     <InArgument x:TypeArguments="x:String">
                       <Literal x:TypeArguments="x:String" Value="" />
@@ -2360,6 +2523,11 @@
               </Sequence>
             </ActivityAction>
           </ui:ExcelApplicationScope.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
         </ui:ExcelApplicationScope>
       </Sequence>
       <FlowStep.Next>
@@ -2370,7 +2538,7 @@
               <av:Size x:Key="ShapeSize">200,52.8</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Read DATA and write Tel.Elszámolás" sap:VirtualizedContainerService.HintSize="614.4,3472.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Read DATA and write Tel.Elszámolás" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="DTELSZAMOLAS" />
               <Variable x:TypeArguments="x:String" Name="excelFile" />
@@ -2387,9 +2555,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select Workbook" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="592,60" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Please select the workbook file to work with&quot;]" TopMost="True" />
+            <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select Workbook" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="592,52.8" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Please select the workbook file to work with&quot;]" TopMost="True" />
             <ui:SelectFile DisplayName="Select the Excel File" Filter="All files (*.*)|*.*" sap:VirtualizedContainerService.HintSize="592,22.4" sap2010:WorkflowViewState.IdRef="SelectFile_2" SelectedFile="[excelFile]" />
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="592,60" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Select output folder&quot;]" TopMost="True" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="592,52.8" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Select output folder&quot;]" TopMost="True" />
             <ui:SelectFolder DisplayName="Select Folder for Output" sap:VirtualizedContainerService.HintSize="592,22.4" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[outputFolder]" />
             <Assign sap:VirtualizedContainerService.HintSize="592,60" sap2010:WorkflowViewState.IdRef="Assign_168">
               <Assign.To>
@@ -2400,18 +2568,19 @@
               </Assign.Value>
             </Assign>
             <ui:CopyFile ContinueOnError="{x:Null}" Destination="[outputFile]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="592,22.4" sap2010:WorkflowViewState.IdRef="CopyFile_3" Overwrite="True" Path="[excelFile]" />
-            <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="592,92.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Select the range of data (normally C4:L179)" Title="Select range">
+            <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="592,52.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Select the range of data (normally C4:L179)" Title="Select range">
               <ui:InputDialog.Result>
                 <OutArgument x:TypeArguments="x:String">[rangeInput]</OutArgument>
               </ui:InputDialog.Result>
             </ui:InputDialog>
-            <Sequence DisplayName="Business Logic with DT" sap:VirtualizedContainerService.HintSize="592,1775.2" sap2010:WorkflowViewState.IdRef="Sequence_54">
+            <Sequence DisplayName="Business Logic with DT" sap:VirtualizedContainerService.HintSize="592,1067.2" sap2010:WorkflowViewState.IdRef="Sequence_54">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="DATA scope" sap:VirtualizedContainerService.HintSize="569.6,294.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_12" WorkbookPath="DATA.xlsx">
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="DATA scope" sap:VirtualizedContainerService.HintSize="569.6,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_12" WorkbookPath="DATA.xlsx">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
@@ -2434,7 +2603,7 @@
                   </ActivityAction>
                 </ui:ExcelApplicationScope.Body>
               </ui:ExcelApplicationScope>
-              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="569.6,294.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_13" WorkbookPath="[excelFile]">
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="569.6,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_13" WorkbookPath="[excelFile]">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
@@ -2451,13 +2620,13 @@
                   </ActivityAction>
                 </ui:ExcelApplicationScope.Body>
               </ui:ExcelApplicationScope>
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DTDATA]" DisplayName="business logic" sap:VirtualizedContainerService.HintSize="569.6,981.6" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DTDATA]" DisplayName="business logic" sap:VirtualizedContainerService.HintSize="569.6,756.8" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="data" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539.2,832.8" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539.2,608" sap2010:WorkflowViewState.IdRef="Sequence_53">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="ui:GenericValue" Name="dataNumber" />
                         <Variable x:TypeArguments="ui:GenericValue" Name="dataType" />
@@ -2465,21 +2634,28 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DTELSZAMOLAS]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="516.8,708" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DTELSZAMOLAS]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="516.8,483.2" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486.4,559.2" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486.4,334.4" sap2010:WorkflowViewState.IdRef="Sequence_52">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[data.Item(0).ToString = row.Item(0).ToString and data.Item(1).ToString = row.Item(4).ToString]" sap:VirtualizedContainerService.HintSize="464,434.4" sap2010:WorkflowViewState.IdRef="If_1">
+                              <If Condition="[data.Item(0).ToString = row.Item(0).ToString and data.Item(1).ToString = row.Item(4).ToString]" sap:VirtualizedContainerService.HintSize="464,209.6" sap2010:WorkflowViewState.IdRef="If_1">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
                                   <Sequence sap:VirtualizedContainerService.HintSize="265.6,284.8" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -2489,7 +2665,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_165">
                                       <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Object">[row.Item(9)]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:Object">[row.Item(10)]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
                                         <InArgument x:TypeArguments="x:Object">[data.Item(2)]</InArgument>
@@ -2509,13 +2685,23 @@
                             </Sequence>
                           </ActivityAction>
                         </ui:ForEachRow.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEachRow>
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEachRow.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
             </Sequence>
-            <ui:FilterDataTable DataTable="[DTDATA]" DisplayName="delete irrelevant data" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="592,60" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DTDATA]" SelectColumnsMode="Keep">
+            <ui:FilterDataTable DataTable="[DTDATA]" DisplayName="delete irrelevant data" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="592,52.8" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DTDATA]" SelectColumnsMode="Keep">
               <ui:FilterDataTable.Filters>
                 <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                   <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -2542,7 +2728,7 @@
                 </scg:List>
               </ui:FilterDataTable.SelectColumns>
             </ui:FilterDataTable>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="update data file" sap:VirtualizedContainerService.HintSize="592,322.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_14" WorkbookPath="DATA.xlsx">
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="update data file" sap:VirtualizedContainerService.HintSize="592,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_14" WorkbookPath="DATA.xlsx">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
@@ -2559,7 +2745,7 @@
                 </ActivityAction>
               </ui:ExcelApplicationScope.Body>
             </ui:ExcelApplicationScope>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="update excel file" sap:VirtualizedContainerService.HintSize="592,450.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_10" Workbook="[outputWorkbook]" WorkbookPath="[outputFile]">
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="update excel file" sap:VirtualizedContainerService.HintSize="592,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_10" Workbook="[outputWorkbook]" WorkbookPath="[outputFile]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
